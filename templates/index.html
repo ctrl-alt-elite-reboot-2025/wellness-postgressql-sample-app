@@ -6,10 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     body {
       background-color: #f8f9fa;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'DM Sans', sans-serif;
     }
     .header {
       display: flex;
@@ -26,34 +28,53 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
       margin: 1rem;
     }
-    .gauge {
-      display: block;
-      margin: 0 auto;
-    }
+
+    .custom-green-btn {
+    background-color: #59A37E; /* Bootstrap's success green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  .custom-green-btn:hover {
+    background-color: #218838;
+  }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <div class="header">
-    <i class="bi bi-envelope fs-5"></i>
-    <span class="fw-bold">Hi {{ username }}</span>
-    <i class="bi bi-gear fs-5"></i>
-  </div>
+ <!-- Header -->
+<div class="d-flex justify-content-between align-items-center px-4 py-3 bg-white border-bottom shadow-sm">
+  <i class="bi bi-envelope fs-5"></i>
+  <span class="fw-bold fs-5">Hi {{ username }}</span>
+  <i class="bi bi-gear fs-5"></i>
+</div>
 
-  <!-- Navigation -->
-  <div class="d-flex justify-content-around py-3 bg-white border-bottom">
-    <button class="btn btn-dark btn-sm px-4">Wellness</button>
-    <button class="btn btn-outline-dark btn-sm px-4">Insure</button>
-  </div>
+<!-- Navigation -->
+<div class="d-flex justify-content-around py-3 bg-white border-bottom">
+  <button class="btn btn-dark btn-sm px-4 rounded-pill">Wellness</button>
+  <button class="btn btn-outline-dark btn-sm px-4 rounded-pill">Insure</button>
+</div>
+
 
   <!-- Wellness Score Card -->
-  <div class="card-style text-center">
-    <img src="{{ url_for('static', filename='wellness_icon.jpeg') }}" alt="Target Icon" width="200" height="200">
-    <h5 class="fw-bold mb-3">Your Wellness Score</h5>
+<div class="card-style text-center p-4">
+  <img src="{{ url_for('static', filename='wellness_icon.jpeg') }}" alt="Target Icon" width="200" height="200">
+  <h5 class="fw-bold mb-3">Your Wellness Score</h5>
 
-    
-  </div>
+  <p class="text-muted mb-4">
+    Your wellness score is great!If you'd still like advice, chat to our health consultant.
+  </p>
+
+
+    <button class="btn custom-green-btn">
+      Talk to a Health Consultant
+    </button>
+</div>
+
 
   <!-- Wellness Options -->
   <div class="card-style">
