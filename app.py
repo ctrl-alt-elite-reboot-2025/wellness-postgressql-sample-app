@@ -37,7 +37,7 @@ from models import Restaurant, Review
 
 @app.route('/')
 def index():
-    return render_template('index.html', username="Adam", score=80)
+    return render_template('index.html', username="Alex", score=80)
 
 
 
